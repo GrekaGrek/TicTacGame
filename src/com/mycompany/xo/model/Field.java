@@ -1,7 +1,6 @@
 package com.mycompany.xo.model;
 
 import com.mycompany.xo.model.exceptions.InvalidPointException;
-import com.mycompany.xo.model.exceptions.OccupiedException;
 
 import java.awt.*;
 
@@ -25,13 +24,11 @@ public class Field {
     }
 
     public void setFigure(final Point point, final Figure figure) throws
-            InvalidPointException, OccupiedException {
+            InvalidPointException {
         if(!checkPoint(point)) {
             throw new InvalidPointException();
         }
-        if(field[point.x][point.y] != null) {
-            throw new OccupiedException();
-        }
+
         field[point.x][point.y] = figure;
     }
 
